@@ -162,7 +162,7 @@ main { min-height: 80vh; padding-top: 120px; } /* espaço para o header fixo */
 .hero.pequeno h1 {
     font-size: 4.5rem;
     background: linear-gradient(90deg, #ff1e56, #ff6b6b);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .hero.pequeno p { font-size: 1.5rem; margin-top: 1rem; }
@@ -271,4 +271,107 @@ section.container {
     .card.grande, .noticia { flex-direction: column; }
     .card.grande img, .noticia img { width: 100%; height: 300px; }
     .hero.pequeno h1 { font-size: 3.5rem; }
+}
+/* ====== MELHORIAS FINAIS – COPIA TUDO ISTO ====== */
+
+/* Centralizar todo o conteúdo da página index */
+.destaques { text-align: center; padding: 120px 20px 80px; }
+.destaques h2 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #ff1e56, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4rem;
+}
+
+/* Eventos – ficar brutais como na foto que mostraste */
+.calendario {
+    display: grid;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+.calendario .evento {
+    background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    transition: all 0.4s;
+    border: 1px solid #333;
+}
+.calendario .evento:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(255,30,90,0.2);
+    border-color: #ff1e56;
+}
+.calendario .evento h3 {
+    font-size: 2.4rem;
+    color: #ff1e56;
+    margin-bottom: 1rem;
+}
+.calendario .evento p {
+    font-size: 1.3rem;
+    margin: 0.8rem 0;
+    color: #ccc;
+}
+.calendario .evento .btn.pequeno {
+    margin-top: 1.5rem;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+}
+
+/* Notícias – ficar mais modernas e com hover */
+.noticias {
+    display: grid;
+    gap: 3.5rem;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+.noticia {
+    display: flex;
+    background: #1a1a1a;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    transition: all 0.4s;
+    border: 1px solid #222;
+}
+.noticia:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(255,30,90,0.15);
+    border-color: #ff1e56;
+}
+.noticia img {
+    width: 420px;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+.noticia:hover img { transform: scale(1.05); }
+.texto {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.texto h3 {
+    font-size: 2rem;
+    color: #ff1e56;
+    margin-bottom: 0.8rem;
+}
+.texto p { margin: 0.7rem 0; font-size: 1.1rem; }
+.data {
+    color: #ff1e56;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Responsivo extra */
+@media (max-width: 992px) {
+    .noticia, .card.grande { flex-direction: column; }
+    .noticia img, .card.grande img { width: 100%; height: 300px; }
 }
